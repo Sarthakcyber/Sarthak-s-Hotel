@@ -1,0 +1,1 @@
+console.log("Sarthak's Hotel website loaded.");

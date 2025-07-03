@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarthak's Hotel Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <!-- Booking Form -->
+  <form id="bookingForm">
+    <label>Booking Type:</label>
+    <select id="searchType" name="type" required>
+      <option value="">-- Select --</option>
+      <option value="room">Room</option>
+      <option value="meeting">Meeting Room</option>
+      <option value="spa">Spa</option>
+      <option value="dining">Dining</option>
+    </select>
+
+    <label>Check-in Date:</label>
+    <input type="date" name="checkin" required />
+
+    <label>Check-out Date:</label>
+    <input type="date" name="checkout" required />
+
+    <label>Number of Guests:</label>
+    <input type="number" name="guests" min="1" required />
+
+    <button type="submit">Book Now</button>
+  </form>
+
+  <!-- Search Result -->
+  <div id="searchResult" class="hidden"></div>
+
+  <!-- Confirmation -->
+  <div id="confirmation" class="hidden"></div>
+
+  <!-- QR Code Section -->
+  <div id="qrSection" class="hidden">
+    <img src="https://i.postimg.cc/T332cNPj/qr.jpg" alt="QR Code" />
+    <p>Pay to UPI: <strong>sarthakagrawal282@okhdfcbank</strong></p>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
