@@ -37,6 +37,11 @@ const bookingData = {
     name: "Fine Dining",
     price: 200,
     image: "https://i.postimg.cc/LsvnxvSm/dining.png"
+  },
+  banquet: {
+    name: "Banquet Hall",
+    price: 100000,
+    image: "https://i.postimg.cc/HWRvKPvX/Banquet.jpg"
   }
 };
 
@@ -62,6 +67,7 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   const type = form.type.value;
   const data = bookingData[type];
+  const guestName = form.guestName.value;
   const checkin = new Date(form.checkin.value);
   const checkout = new Date(form.checkout.value);
   const guests = form.guests.value;
@@ -104,9 +110,11 @@ form.addEventListener('submit', function (e) {
   const discountAmount = totalPrice * discount;
   const finalPrice = totalPrice - discountAmount;
 
+  // Show on-screen confirmation
   confirmation.classList.remove('hidden');
   confirmation.innerHTML = `
     ✅ Booking Created!<br>
+    Guest Name: <strong>${guestName}</strong><br>
     Type: <strong>${data.name}</strong><br>
     From: <strong>${form.checkin.value}</strong> to <strong>${form.checkout.value}</strong><br>
     Guests: <strong>${guests}</strong><br>
@@ -150,6 +158,7 @@ form.addEventListener('submit', function (e) {
     doc.setFontSize(12);
 
     let y = 60;
+    doc.text(`Guest Name: ${guestName}`, 20, y += 10);
     doc.text(`Booking Type: ${data.name}`, 20, y += 10);
     doc.text(`Check-In: ${form.checkin.value}`, 20, y += 10);
     doc.text(`Check-Out: ${form.checkout.value}`, 20, y += 10);
