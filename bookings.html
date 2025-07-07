@@ -10,6 +10,9 @@
 </head>
 <body>
   <!-- Booking Form -->
+  <form id="bookingForm" class="form-card">
+  <label>Guest Name:</label>
+  <input type="text" name="guestName" placeholder="Enter your name" required />
   <form id="bookingForm">
     <label>Booking Type:</label>
     <select id="searchType" name="type" required>
@@ -18,6 +21,7 @@
       <option value="meeting">Meeting Room</option>
       <option value="spa">Spa</option>
       <option value="dining">Dining</option>
+      <option value="banquet">Banquet Hall</option>
     </select>
 
     <label>Check-in Date:</label>
